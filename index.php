@@ -25,6 +25,8 @@
 
 			$str = '-new-posts'; // лишние символы в url
 
+			echo '<ul>';
+
 			foreach ($rss->channel->item as $item) { //цикл для обхода всей RSS ленты
 
 					$link = strip_tags($item->link);
@@ -39,10 +41,11 @@
 						$newlink = $link;
 					}
 
-					echo '<ul>';
 					echo '<li><a href="' . $newlink  . '">' . strip_tags($item->title) . '</a></li>';
-					echo '</ul>';
+					
 			}
+
+			echo '</ul>';
 
 		}
 
